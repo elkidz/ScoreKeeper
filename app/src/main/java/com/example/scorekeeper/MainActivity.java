@@ -7,15 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-/**
- * This app displays an order form to order coffee.
- */
 public class MainActivity extends AppCompatActivity {
 
-    int equipaA = 0;
-    int equipaB = 0;
-    int faultsA = 0;
-    int faultsB = 0;
+    int equipaA, equipaB, faultsA, faultsB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,33 +18,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Incrementar resultados
+     * Incrementar resultados e faltas
      */
     public void incrementA(View view) {
-        equipaA = equipaA + 1;
-        displayResultA(equipaA);
+        displayResultA(equipaA++);
     }
 
     public void incrementB(View view) {
-        equipaB = equipaB + 1;
-        displayResultB(equipaB);
+        displayResultB(equipaB++);
     }
 
-    /**
-     * Incrementar faltas
-     */
     public void incrementFaultsA(View view) {
-        faultsA = faultsA + 1;
-        displayFoulsA(faultsA);
+        displayFoulsA(faultsA++);
     }
 
     public void incrementFaultsB(View view) {
-        faultsB = faultsB + 1;
-        displayFoulsB(faultsB);
+        displayFoulsB(faultsB++);
     }
 
     /**
-     * Mostrar os resultados
+     * Displays - Mostrar os resultados e faltas
      */
     private void displayResultA(int number) {
         TextView quantityTextView = findViewById(R.id.score_a);
@@ -62,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
-    /**
-     * Mostrar os faltas
-     */
     private void displayFoulsA(int number) {
         TextView quantityTextView = findViewById(R.id.fouls_a);
         quantityTextView.setText("" + number);
@@ -75,14 +59,13 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + number);
     }
 
+    /**
+     * Reset dos valores
+     */
     public void reset(View view) {
-        displayResultA(0);
-        displayResultB(0);
-        displayFoulsA(0);
-        displayFoulsB(0);
-        equipaA = 0;
-        equipaB = 0;
-        faultsA = 0;
-        faultsB = 0;
+        displayResultA(equipaA = 0);
+        displayResultB(equipaB = 0);
+        displayFoulsA(faultsA = 0);
+        displayFoulsB(faultsB = 0);
     }
 }

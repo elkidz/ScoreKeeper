@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    // TODO: naming conventions
+    /* https://source.android.com/setup/contribute/code-style#follow-field-naming-conventions */
     int teamA, teamB, faultsA, faultsB = 0;
 
     @Override
@@ -21,6 +23,13 @@ public class MainActivity extends AppCompatActivity {
      * Incrementar resultados e faltas
      */
     public void incrementA(View view) {
+        // TODO: SEPARAÇÃO DE CONCEITOS
+        /*
+         * public void onIncrementABtnClick(){
+         *   incrementA();
+         *   displayResultA(teamA);
+         * }
+         * */
         teamA++;
         displayResultA(teamA);
     }
@@ -46,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
     private void displayResultA(int number) {
         TextView quantityTextView = findViewById(R.id.score_a);
         quantityTextView.setText("" + number);
+
+        // TODO: OPTIMIZAÇÃO DA INICIALIZAÇÃO DE VIEWS
+        /*
+         *   - Declarar como variável membro da classe
+         *   - Inicializar no OnCreate()
+         * */
     }
 
     private void displayResultB(int number) {
@@ -67,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
      * Reset dos valores
      */
     public void reset(View view) {
+        // TODO: Separação de conceitos
         displayResultA(teamA = 0);
         displayResultB(teamB = 0);
         displayFoulsA(faultsA = 0);

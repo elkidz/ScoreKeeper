@@ -21,19 +21,23 @@ public class MainActivity extends AppCompatActivity {
      * Incrementar resultados e faltas
      */
     public void incrementA(View view) {
-        displayResultA(teamA++);
+        teamA++;
+        displayResultA(teamA);
     }
 
     public void incrementB(View view) {
-        displayResultB(teamB++);
+        teamB++;
+        displayResultB(teamB);
     }
 
     public void incrementFaultsA(View view) {
-        displayFoulsA(faultsA++);
+        faultsA++;
+        displayFoulsA(faultsA);
     }
 
     public void incrementFaultsB(View view) {
-        displayFoulsB(faultsB++);
+        faultsB++;
+        displayFoulsB(faultsB);
     }
 
     /**

@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO: naming conventions
     /* https://source.android.com/setup/contribute/code-style#follow-field-naming-conventions */
-    int teamA, teamB, faultsA, faultsB = 0;
+    int mTeamA, mTeamB, mFoulsA, mFoulsB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,33 +20,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Incrementar resultados e faltas
+     * Incrementar A
      */
-    public void incrementA(View view) {
-        // TODO: SEPARAÇÃO DE CONCEITOS
-        /*
-         * public void onIncrementABtnClick(){
-         *   incrementA();
-         *   displayResultA(teamA);
-         * }
-         * */
-        teamA++;
-        displayResultA(teamA);
+    private void incrementA() {
+        mTeamA++;
     }
 
-    public void incrementB(View view) {
-        teamB++;
-        displayResultB(teamB);
+    /**
+     * Incrementar e display ao clicar no botão
+     */
+    public void onIncrementABtnClick() {
+        incrementA();
+        displayResultA(mTeamA);
+    }
+
+    /**
+     * Incrementar B
+     */
+    private void incrementB() {
+        mTeamA++;
+    }
+
+    /**
+     * Incrementar B e display ao clicar no botão
+     */
+    public void onIncrementBBtnClick() {
+        incrementB();
+        displayResultB(mTeamA);
     }
 
     public void incrementFaultsA(View view) {
-        faultsA++;
-        displayFoulsA(faultsA);
+        mFoulsA++;
+        displayFoulsA(mFoulsA);
     }
 
     public void incrementFaultsB(View view) {
-        faultsB++;
-        displayFoulsB(faultsB);
+        mFoulsB++;
+        displayFoulsB(mFoulsB);
     }
 
     /**
@@ -83,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void reset(View view) {
         // TODO: Separação de conceitos
-        displayResultA(teamA = 0);
-        displayResultB(teamB = 0);
-        displayFoulsA(faultsA = 0);
-        displayFoulsB(faultsB = 0);
+        displayResultA(mTeamA = 0);
+        displayResultB(mTeamB = 0);
+        displayFoulsA(mFoulsA = 0);
+        displayFoulsB(mFoulsB = 0);
     }
 }

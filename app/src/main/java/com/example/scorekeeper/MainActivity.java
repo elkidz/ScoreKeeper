@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int equipaA, equipaB, faultsA, faultsB = 0;
+    int teamA, teamB, faultsA, faultsB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +21,23 @@ public class MainActivity extends AppCompatActivity {
      * Incrementar resultados e faltas
      */
     public void incrementA(View view) {
-        displayResultA(equipaA++);
+        teamA++;
+        displayResultA(teamA);
     }
 
     public void incrementB(View view) {
-        displayResultB(equipaB++);
+        teamB++;
+        displayResultB(teamB);
     }
 
     public void incrementFaultsA(View view) {
-        displayFoulsA(faultsA++);
+        faultsA++;
+        displayFoulsA(faultsA);
     }
 
     public void incrementFaultsB(View view) {
-        displayFoulsB(faultsB++);
+        faultsB++;
+        displayFoulsB(faultsB);
     }
 
     /**
@@ -63,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
      * Reset dos valores
      */
     public void reset(View view) {
-        displayResultA(equipaA = 0);
-        displayResultB(equipaB = 0);
+        displayResultA(teamA = 0);
+        displayResultB(teamB = 0);
         displayFoulsA(faultsA = 0);
         displayFoulsB(faultsB = 0);
     }

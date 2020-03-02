@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScoreKeeper</string>
+    <string name="resultado">Resultado</string>
+    <string name="faltas">Faltas</string>
+    <string name="equipa_a">Equipa A</string>
+    <string name="equipa_b">Equipa B</string>
+</resources>

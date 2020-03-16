@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int equipaA, equipaB, faultsA, faultsB = 0;
+    // TODO: naming conventions
+    /* https://source.android.com/setup/contribute/code-style#follow-field-naming-conventions */
+    int mTeamA, mTeamB, mFoulsA, mFoulsB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,22 +20,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Incrementar resultados e faltas
+     * Incrementar A
      */
-    public void incrementA(View view) {
-        displayResultA(equipaA++);
+    private void incrementA() {
+        mTeamA++;
     }
 
-    public void incrementB(View view) {
-        displayResultB(equipaB++);
+    /**
+     * Incrementar e display ao clicar no botão
+     */
+    public void onIncrementABtnClick() {
+        incrementA();
+        displayResultA(mTeamA);
+    }
+
+    /**
+     * Incrementar B
+     */
+    private void incrementB() {
+        mTeamA++;
+    }
+
+    /**
+     * Incrementar B e display ao clicar no botão
+     */
+    public void onIncrementBBtnClick() {
+        incrementB();
+        displayResultB(mTeamA);
     }
 
     public void incrementFaultsA(View view) {
-        displayFoulsA(faultsA++);
+        mFoulsA++;
+        displayFoulsA(mFoulsA);
     }
 
     public void incrementFaultsB(View view) {
-        displayFoulsB(faultsB++);
+        mFoulsB++;
+        displayFoulsB(mFoulsB);
     }
 
     /**
@@ -42,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
     private void displayResultA(int number) {
         TextView quantityTextView = findViewById(R.id.score_a);
         quantityTextView.setText("" + number);
+
+        // TODO: OPTIMIZAÇÃO DA INICIALIZAÇÃO DE VIEWS
+        /*
+         *   - Declarar como variável membro da classe
+         *   - Inicializar no OnCreate()
+         * */
     }
 
     private void displayResultB(int number) {
@@ -63,9 +92,10 @@ public class MainActivity extends AppCompatActivity {
      * Reset dos valores
      */
     public void reset(View view) {
-        displayResultA(equipaA = 0);
-        displayResultB(equipaB = 0);
-        displayFoulsA(faultsA = 0);
-        displayFoulsB(faultsB = 0);
+        // TODO: Separação de conceitos
+        displayResultA(mTeamA = 0);
+        displayResultB(mTeamB = 0);
+        displayFoulsA(mFoulsA = 0);
+        displayFoulsB(mFoulsB = 0);
     }
 }

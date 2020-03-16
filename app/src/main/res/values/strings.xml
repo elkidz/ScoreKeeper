@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">ScoreKeeper</string>
-    <string name="equipa_a">Equipa A</string>
-    <string name="equipa_b">Equipa B</string>
-    <string name="resultado">Resultado</string>
-    <string name="faltas">Faltas</string>
-    <string name="reset">Reset</string>
-    <string name="_0">0</string>
-    <string name="plus1">+1</string>
+    <string name="equipa_a">Team A</string>
+    <string name="equipa_b">Team B</string>
+    <string name="resultado">Score</string>
+    <string name="faltas">Fouls</string>
+    <string name="reset" translatable="false">Reset</string>
+    <string name="_0" translatable="false">0</string>
+    <string name="plus1" translatable="false">+1</string>
 </resources>
